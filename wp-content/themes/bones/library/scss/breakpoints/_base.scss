@@ -139,12 +139,58 @@ LAYOUT & GRID STYLES
 	}
 }
 
+@keyframes scaleDownAndFlipBack {
+    from {
+        @include transform(scale(1));
+        @include transform(rotateX(0deg));
+    }
+    30% {
+        @include transform(scale(0.8));
+    }
+    to {
+        @include transform(scale(1));
+        @include transform(rotateX(180deg));
+    }
+}
+
+@keyframes scaleDownAndFlipForward {
+    from {
+        @include transform(scale(1));
+        @include transform(rotateX(180deg));
+    }
+    70% {
+        @include transform(scale(0.8));
+    }
+    to {
+        @include transform(scale(1));
+        @include transform(rotateX(0deg));
+    }
+}
+
+#card {
+    @extend .full-screen;
+    @include transform-style(preserve-3d);
+    &.flipped {
+        @include animation(scaleDownAndFlipBack 1s ease-in both);
+    }
+    &.unflipped {
+        @include animation(scaleDownAndFlipForward 1s ease-in both);
+    }
+}
+
 #main, #content {
 	@extend .full-screen;
     z-index: 10;
 }
 
+#main {
+    @include perspective(1000px);
+    background-image: url('../images/symphony.png');
+}
+
 #content {
+    @extend .face;
+    overflow: scroll;
     @include transition(left $transition);
 }
 
@@ -157,6 +203,11 @@ UNIVERSAL STYLES (e.g., loading screen, logo)
     top: 0; left: 0;
     height: 100%; width: 100%;
     background-color: white;
+}
+
+.face {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 #loading {
@@ -180,16 +231,17 @@ UNIVERSAL STYLES (e.g., loading screen, logo)
 }
 
 #logo {
-    &:hover {
-        & ~ #content, & ~ #content > .categories.side {
-            left: -5rem;
-        }
-    }
+    position: fixed;
+    top: 1rem; right: 1rem;
+    width: 3rem;
+    z-index: 12;
+    // &:hover {
+    //     & ~ #content, & ~ #content > .categories.side {
+    //         left: -5rem;
+    //     }
+    // }
     img {
-        position: fixed;
-        top: 1rem; right: 1rem;
-        width: 3rem;
-        z-index: 12;
+        width: 100%;
     }
 }
 
@@ -198,6 +250,53 @@ HEADER STYLES
 *********************/
 
 header.header {
+    @extend .full-screen, .face;
+    background-color: $black;
+    z-index: 11;
+    @include transform(rotateX(-180deg));
+    img.header {
+        display: block;
+        height: 5rem;
+        margin: 0 auto;
+    }
+    .navitems {
+        position: absolute;
+        top: 0; left: 10rem; bottom: 0;
+        width: 5rem;
+        height: 23rem;
+        margin: auto 0;
+        span {
+            // position: absolute;
+            // top: 0; left: 0;
+            display: block;
+            width: 5rem;
+            margin: 1rem 0;
+            text-align: center;
+            color: white;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            a {
+                color: white;
+                &:hover {
+                    color: white;
+                }
+            }
+            img {
+                display: block;
+                width: 5rem;
+                margin: 0 auto;
+                padding: 0.5rem 0;
+            }
+        }
+    }
+    i.fa-shopping-cart {
+        position: absolute;
+        right: 0; bottom: 5rem; left: 0;
+        text-align: center;
+    }
+}
+
+old.header {
     position: fixed;
     top: 0; right: 0; bottom: 0;
     width: 5rem;
@@ -253,7 +352,6 @@ INDEX PAGE - HALFS
     @extend .section;
     position: relative;
     height: 50%;
-    float: left;
     overflow: hidden;
     padding: 0;
     color: white;
@@ -269,7 +367,7 @@ INDEX PAGE - HALFS
         width: 100%;
         background-size: cover;
         z-index: -1;
-        @include transition(all $big-transition);
+        @include transition(all $transition);
     }
     &.store {
         .background {
@@ -368,12 +466,12 @@ PRODUCT PAGE
             background-color: $black;
             &.active {
                 background-color: white;
-                i {
+                h1 {
                     color: $black;
                 }
             }
             h1 {
-                display: none;
+                font-size: 4rem;
             }
             i {
                 display: block;
@@ -401,19 +499,16 @@ PRODUCT PAGE
         &:hover {
             background-size: 120% auto;
         }
-        i {
-            display: none;
-        }
     }
     .top {
         @extend .category;
         background-image: url('../images/top.png');
     }
-    .middle {
+    .mid {
         @extend .category;
         background-image: url('../images/store.png');
     }
-    .bottom {
+    .low {
         @extend .category;
         background-image: url('../images/bottom.png');
     }
@@ -421,7 +516,7 @@ PRODUCT PAGE
 
 .section.side {
     position: absolute;
-    top: 0; right: 0;
+    top: 5rem; right: 0;
     width: 85%;
     min-height: 100%;
     img.header {
@@ -466,7 +561,7 @@ PRODUCT PAGE
                         top: 2rem;
                         opacity: 1;
                     }
-                    a.button {
+                    span.button {
                         bottom: 2rem;
                         opacity: 1;
                     }
@@ -491,7 +586,7 @@ PRODUCT PAGE
                     opacity: 0;
                     @include transition(top $transition, opacity $transition);
                 }
-                a.button {
+                span.button {
                     display: block;
                     position: absolute;
                     bottom: 0; left: 0; right: 0;
@@ -559,7 +654,7 @@ PRODUCT PAGE
     #content {
         div.product {
             width: 80%;
-            margin: 2rem auto;
+            margin: 0 auto;
             h1 {
                 font-size: 3rem;
                 text-align: left;
@@ -570,11 +665,38 @@ PRODUCT PAGE
                 clear: both;
             }
             div.images {
-                width: 40%;
+                float: none;
+                width: 100%;
+                &:after {
+                    content: ' ';
+                    display: table;
+                    clear: both;
+                }
+                img {
+                    width: 75%;
+                    float: left;
+                }
+                div.thumbnails {
+                    width: 25%;
+                    float: left;
+                    a {
+                        float: none;
+                        width: 100%;
+                        margin: 0;
+                        img {
+                            width: 50%;
+                            float: none;
+                            margin: 1rem auto;
+                        }
+                        &.first {
+                            clear: none;
+                        }
+                    }
+                }
             }
             div.summary {
                 width: 100%;
-                float: left;
+                float: none;
                 padding: 0 5%;
                 p.price {
                     color: $black;
@@ -582,6 +704,10 @@ PRODUCT PAGE
                     font-size: 2rem;
                     margin: 0;
                 }
+            }
+            div.product_details {
+                width: 100%;
+                padding: 0 5%;
                 form.cart {
                     margin-bottom: 0;
                     .variations {
@@ -634,16 +760,16 @@ PRODUCT PAGE
                         }
                     }
                 }
-            }
-            div.product_details {
-                width: 100%;
-                padding: 0 5%;
-                .woocommerce-tabs {
-                    width: 60%;
-                    float: right;
-                    clear: none;
-                    .panel {
-                        padding: 0 5%;
+                .wc-tab, .entry-content {
+                    padding: 0 5%;
+                    clear: both;
+                    &#tab-description, &#tab-additional_information {
+                        width: 50%;
+                        float: left;
+                        clear: none;
+                    }
+                    table, tr, tr.alt, th, td {
+                        background-color: transparent;
                     }
                 }
             }

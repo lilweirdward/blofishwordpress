@@ -1497,11 +1497,71 @@ LAYOUT & GRID STYLES
   text-align: left;
 }
 
+@keyframes scaleDownAndFlipBack {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+  }
+
+  30% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+
+  to {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+  }
+}
+@keyframes scaleDownAndFlipForward {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+  }
+
+  70% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+
+  to {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+  }
+}
+#card {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+#card.flipped {
+  -webkit-animation: scaleDownAndFlipBack 1s ease-in both;
+  animation: scaleDownAndFlipBack 1s ease-in both;
+}
+#card.unflipped {
+  -webkit-animation: scaleDownAndFlipForward 1s ease-in both;
+  animation: scaleDownAndFlipForward 1s ease-in both;
+}
+
 #main, #content {
   z-index: 10;
 }
 
+#main {
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  background-image: url("../images/symphony.png");
+}
+
 #content {
+  overflow: scroll;
   -webkit-transition: left 0.3s;
   transition: left 0.3s;
 }
@@ -1509,13 +1569,18 @@ LAYOUT & GRID STYLES
 /*********************
 UNIVERSAL STYLES (e.g., loading screen, logo)
 *********************/
-.full-screen, #main, #content, #loading {
+.full-screen, #card, #main, #content, #loading, header.header {
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
   background-color: white;
+}
+
+.face, #content, header.header {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 #loading {
@@ -1538,25 +1603,74 @@ UNIVERSAL STYLES (e.g., loading screen, logo)
   bottom: 0;
   left: 0;
   margin: auto;
-  -webkit-transition: logoAnimation 1s ease-out infinite;
-  transition: logoAnimation 1s ease-out infinite;
+  -webkit-animation: logoAnimation 1s ease-out infinite;
+  animation: logoAnimation 1s ease-out infinite;
 }
 
-#logo:hover ~ #content, #logo:hover ~ #content > .categories.side {
-  left: -5rem;
-}
-#logo img {
+#logo {
   position: fixed;
   top: 1rem;
   right: 1rem;
   width: 3rem;
   z-index: 12;
 }
+#logo img {
+  width: 100%;
+}
 
 /*********************
 HEADER STYLES
 *********************/
 header.header {
+  background-color: #221e1f;
+  z-index: 11;
+  -webkit-transform: rotateX(-180deg);
+  transform: rotateX(-180deg);
+}
+header.header img.header {
+  display: block;
+  height: 5rem;
+  margin: 0 auto;
+}
+header.header .navitems {
+  position: absolute;
+  top: 0;
+  left: 10rem;
+  bottom: 0;
+  width: 5rem;
+  height: 23rem;
+  margin: auto 0;
+}
+header.header .navitems span {
+  display: block;
+  width: 5rem;
+  margin: 1rem 0;
+  text-align: center;
+  color: white;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+header.header .navitems span a {
+  color: white;
+}
+header.header .navitems span a:hover {
+  color: white;
+}
+header.header .navitems span img {
+  display: block;
+  width: 5rem;
+  margin: 0 auto;
+  padding: 0.5rem 0;
+}
+header.header i.fa-shopping-cart {
+  position: absolute;
+  right: 0;
+  bottom: 5rem;
+  left: 0;
+  text-align: center;
+}
+
+old.header {
   position: fixed;
   top: 0;
   right: 0;
@@ -1567,10 +1681,10 @@ header.header {
   -webkit-transition: right 0.3s;
   transition: right 0.3s;
 }
-header.header:hover ~ #content, header.header:hover ~ #content > .categories.side {
+old.header:hover ~ #content, old.header:hover ~ #content > .categories.side {
   left: -5rem;
 }
-header.header span {
+old.header span {
   position: absolute;
   top: 0;
   left: 0;
@@ -1580,25 +1694,25 @@ header.header span {
   font-size: 0.75rem;
   text-transform: uppercase;
 }
-header.header span a {
+old.header span a {
   color: white;
 }
-header.header span a:hover {
+old.header span a:hover {
   color: white;
 }
-header.header span.store {
+old.header span.store {
   top: 6rem;
 }
-header.header span.about {
+old.header span.about {
   top: 10.5rem;
 }
-header.header span img {
+old.header span img {
   display: block;
   width: 2rem;
   margin: 0 auto;
   padding: 0.5rem 0;
 }
-header.header i {
+old.header i {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -1613,18 +1727,14 @@ INDEX PAGE - HALFS
 .half {
   position: relative;
   height: 50%;
-  float: left;
   overflow: hidden;
   padding: 0;
   color: white;
   background-color: transparent;
 }
 .half:hover .background {
-  -webkit-transition: scale(1.1, 1.1);
-  -moz-transition: scale(1.1, 1.1);
-  -ms-transition: scale(1.1, 1.1);
-  -o-transition: scale(1.1, 1.1);
-  transition: scale(1.1, 1.1);
+  -webkit-transform: scale(1.1, 1.1);
+  transform: scale(1.1, 1.1);
 }
 .half .background {
   position: absolute;
@@ -1632,8 +1742,8 @@ INDEX PAGE - HALFS
   width: 100%;
   background-size: cover;
   z-index: -1;
-  -webkit-transition: all 1s;
-  transition: all 1s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 .half.store .background {
   background-image: url("../images/store.png");
@@ -1724,30 +1834,30 @@ PRODUCT PAGE
   position: fixed;
   width: 15%;
 }
-.categories.side .category, .categories.side .top, .categories.side .middle, .categories.side .bottom {
+.categories.side .category, .categories.side .top, .categories.side .mid, .categories.side .low {
   background-image: none;
   background-color: #221e1f;
 }
-.categories.side .category.active, .categories.side .active.top, .categories.side .active.middle, .categories.side .active.bottom {
+.categories.side .category.active, .categories.side .active.top, .categories.side .active.mid, .categories.side .active.low {
   background-color: white;
 }
-.categories.side .category.active i, .categories.side .active.top i, .categories.side .active.middle i, .categories.side .active.bottom i {
+.categories.side .category.active h1, .categories.side .active.top h1, .categories.side .active.mid h1, .categories.side .active.low h1 {
   color: #221e1f;
 }
-.categories.side .category h1, .categories.side .top h1, .categories.side .middle h1, .categories.side .bottom h1 {
-  display: none;
+.categories.side .category h1, .categories.side .top h1, .categories.side .mid h1, .categories.side .low h1 {
+  font-size: 4rem;
 }
-.categories.side .category i, .categories.side .top i, .categories.side .middle i, .categories.side .bottom i {
+.categories.side .category i, .categories.side .top i, .categories.side .mid i, .categories.side .low i {
   display: block;
   text-align: center;
   padding: .67em 0;
   -webkit-transition: font-size 0.3s;
   transition: font-size 0.3s;
 }
-.categories.side .category i:hover, .categories.side .top i:hover, .categories.side .middle i:hover, .categories.side .bottom i:hover {
+.categories.side .category i:hover, .categories.side .top i:hover, .categories.side .mid i:hover, .categories.side .low i:hover {
   font-size: 5.25em;
 }
-.categories .category, .categories .top, .categories .middle, .categories .bottom {
+.categories .category, .categories .top, .categories .mid, .categories .low {
   height: 33.33333333333333333%;
   width: 100%;
   margin: 0;
@@ -1762,25 +1872,22 @@ PRODUCT PAGE
   -webkit-transition: background-size 0.3s;
   transition: background-size 0.3s;
 }
-.categories .category:hover, .categories .top:hover, .categories .middle:hover, .categories .bottom:hover {
+.categories .category:hover, .categories .top:hover, .categories .mid:hover, .categories .low:hover {
   background-size: 120% auto;
-}
-.categories .category i, .categories .top i, .categories .middle i, .categories .bottom i {
-  display: none;
 }
 .categories .top {
   background-image: url("../images/top.png");
 }
-.categories .middle {
+.categories .mid {
   background-image: url("../images/store.png");
 }
-.categories .bottom {
+.categories .low {
   background-image: url("../images/bottom.png");
 }
 
 .section.side, .side.half {
   position: absolute;
-  top: 0;
+  top: 5rem;
   right: 0;
   width: 85%;
   min-height: 100%;
@@ -1828,7 +1935,7 @@ PRODUCT PAGE
   top: 2rem;
   opacity: 1;
 }
-.section.side ul.products li.product:hover .layer a.button, .side.half ul.products li.product:hover .layer a.button {
+.section.side ul.products li.product:hover .layer span.button, .side.half ul.products li.product:hover .layer span.button {
   bottom: 2rem;
   opacity: 1;
 }
@@ -1859,7 +1966,7 @@ PRODUCT PAGE
   -webkit-transition: top 0.3s, opacity 0.3s;
   transition: top 0.3s, opacity 0.3s;
 }
-.section.side ul.products li.product .layer a.button, .side.half ul.products li.product .layer a.button {
+.section.side ul.products li.product .layer span.button, .side.half ul.products li.product .layer span.button {
   display: block;
   position: absolute;
   bottom: 0;
@@ -1872,7 +1979,7 @@ PRODUCT PAGE
   background-color: white;
   border-color: white;
 }
-.section.side ul.products li.product .layer a.button:hover, .side.half ul.products li.product .layer a.button:hover {
+.section.side ul.products li.product .layer span.button:hover, .side.half ul.products li.product .layer span.button:hover {
   color: white;
   background-color: transparent;
 }
@@ -1921,7 +2028,7 @@ PRODUCT PAGE
 
 .woocommerce #content div.product {
   width: 80%;
-  margin: 2rem auto;
+  margin: 0 auto;
 }
 .woocommerce #content div.product h1 {
   font-size: 3rem;
@@ -1933,11 +2040,38 @@ PRODUCT PAGE
   clear: both;
 }
 .woocommerce #content div.product div.images {
-  width: 40%;
+  float: none;
+  width: 100%;
+}
+.woocommerce #content div.product div.images:after {
+  content: ' ';
+  display: table;
+  clear: both;
+}
+.woocommerce #content div.product div.images img {
+  width: 75%;
+  float: left;
+}
+.woocommerce #content div.product div.images div.thumbnails {
+  width: 25%;
+  float: left;
+}
+.woocommerce #content div.product div.images div.thumbnails a {
+  float: none;
+  width: 100%;
+  margin: 0;
+}
+.woocommerce #content div.product div.images div.thumbnails a img {
+  width: 50%;
+  float: none;
+  margin: 1rem auto;
+}
+.woocommerce #content div.product div.images div.thumbnails a.first {
+  clear: none;
 }
 .woocommerce #content div.product div.summary {
   width: 100%;
-  float: left;
+  float: none;
   padding: 0 5%;
 }
 .woocommerce #content div.product div.summary p.price {
@@ -1946,24 +2080,28 @@ PRODUCT PAGE
   font-size: 2rem;
   margin: 0;
 }
-.woocommerce #content div.product div.summary form.cart {
+.woocommerce #content div.product div.product_details {
+  width: 100%;
+  padding: 0 5%;
+}
+.woocommerce #content div.product div.product_details form.cart {
   margin-bottom: 0;
 }
-.woocommerce #content div.product div.summary form.cart .variations {
+.woocommerce #content div.product div.product_details form.cart .variations {
   position: relative;
   margin: 1rem 0;
   padding: 1rem 0 2rem;
   border-top: 1px solid #6e6e6e;
   border-bottom: 1px solid #6e6e6e;
 }
-.woocommerce #content div.product div.summary form.cart .variations:after {
+.woocommerce #content div.product div.product_details form.cart .variations:after {
   content: ' ';
   display: table;
   margin: 0;
   padding: 0;
   clear: both;
 }
-.woocommerce #content div.product div.summary form.cart .variations fieldset {
+.woocommerce #content div.product div.product_details form.cart .variations fieldset {
   float: left;
   width: 32.5%;
   position: relative;
@@ -1971,10 +2109,10 @@ PRODUCT PAGE
   padding: 0 1rem;
   border: 0;
 }
-.woocommerce #content div.product div.summary form.cart .variations fieldset select {
+.woocommerce #content div.product div.product_details form.cart .variations fieldset select {
   width: 100%;
 }
-.woocommerce #content div.product div.summary form.cart .variations .reset_variations {
+.woocommerce #content div.product div.product_details form.cart .variations .reset_variations {
   position: absolute;
   display: block !important;
   bottom: 0.75rem;
@@ -1983,35 +2121,35 @@ PRODUCT PAGE
   margin: 0 auto;
   text-align: center;
 }
-.woocommerce #content div.product div.summary form.cart .variations .single_variation_wrap {
+.woocommerce #content div.product div.product_details form.cart .variations .single_variation_wrap {
   float: left;
   width: 35%;
 }
-.woocommerce #content div.product div.summary form.cart .variations .single_variation_wrap fieldset.quantity {
+.woocommerce #content div.product div.product_details form.cart .variations .single_variation_wrap fieldset.quantity {
   width: 35%;
   position: relative;
 }
-.woocommerce #content div.product div.summary form.cart .variations .single_variation_wrap fieldset.quantity div.quantity {
+.woocommerce #content div.product div.product_details form.cart .variations .single_variation_wrap fieldset.quantity div.quantity {
   width: 100%;
 }
-.woocommerce #content div.product div.summary form.cart .variations .single_variation_wrap fieldset.quantity input {
+.woocommerce #content div.product div.product_details form.cart .variations .single_variation_wrap fieldset.quantity input {
   width: 100%;
 }
-.woocommerce #content div.product div.summary form.cart .variations .single_variation_wrap .button {
+.woocommerce #content div.product div.product_details form.cart .variations .single_variation_wrap .button {
   margin-top: 1.5rem;
   width: 65%;
 }
-.woocommerce #content div.product div.product_details {
-  width: 100%;
+.woocommerce #content div.product div.product_details .wc-tab, .woocommerce #content div.product div.product_details .entry-content {
   padding: 0 5%;
+  clear: both;
 }
-.woocommerce #content div.product div.product_details .woocommerce-tabs {
-  width: 60%;
-  float: right;
+.woocommerce #content div.product div.product_details .wc-tab#tab-description, .woocommerce #content div.product div.product_details .wc-tab#tab-additional_information, .woocommerce #content div.product div.product_details .entry-content#tab-description, .woocommerce #content div.product div.product_details .entry-content#tab-additional_information {
+  width: 50%;
+  float: left;
   clear: none;
 }
-.woocommerce #content div.product div.product_details .woocommerce-tabs .panel {
-  padding: 0 5%;
+.woocommerce #content div.product div.product_details .wc-tab table, .woocommerce #content div.product div.product_details .wc-tab tr, .woocommerce #content div.product div.product_details .wc-tab tr.alt, .woocommerce #content div.product div.product_details .wc-tab th, .woocommerce #content div.product div.product_details .wc-tab td, .woocommerce #content div.product div.product_details .entry-content table, .woocommerce #content div.product div.product_details .entry-content tr, .woocommerce #content div.product div.product_details .entry-content tr.alt, .woocommerce #content div.product div.product_details .entry-content th, .woocommerce #content div.product div.product_details .entry-content td {
+  background-color: transparent;
 }
 
 /*********************

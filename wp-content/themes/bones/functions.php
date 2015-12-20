@@ -249,12 +249,15 @@ add_action( 'body_class', 'add_woocommerce_to_body_everywhere' );
 /************* WOOCOMMERCE OVERRIDES *********************/
 
 // Remove actions on all the functions I don't want
-remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
-remove_action('woocommerce_after_shop_loop', 'woocommerce_pagination', 10 );
-remove_action('woocommerce_single_variation', 'woocommerce_single_variation', 10 );
-remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
+remove_action( 'woocommerce_after_shop_loop', 'woocommerce_pagination', 10 );
+remove_action( 'woocommerce_single_variation', 'woocommerce_single_variation', 10 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
 
 // Add custom actions if necessary
+
+add_action( 'woocommerce_after_single_product_summary', 'woocommerce_template_single_add_to_cart', 5 );
 // add_action('woocommerce_after_shop_loop', 'my_output_content_wrapper', 10 );
 // add_action('wp_ajax_nopriv_ajax_woocommerce', 'my_ajax_woocommerce');
 // add_action('wp_ajax_ajax_woocommerce', 'my_ajax_woocommerce');

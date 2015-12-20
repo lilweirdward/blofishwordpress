@@ -50,19 +50,49 @@
 
 		<div id="main" class="m-scene">
 
-            <a href="<?php echo home_url(); ?>" id="logo"><img src="<?php echo get_template_directory_uri(); ?>/library/images/diamondhat.png" /></a>
+            <a href="#" id="logo"><img src="<?php echo get_template_directory_uri(); ?>/library/images/diamondhat.png" /></a>
 
-			<header class="header">
+            <div id="card">
 
-                <span class="store"><a href="<?php echo home_url(); ?>/shop/"><img class="fish store" src="<?php echo get_template_directory_uri(); ?>/library/images/logo-white.png" />shop</a></span>
-                <span class="about"><a href="<?php echo home_url(); ?>/about/"><img class="fish about" src="<?php echo get_template_directory_uri(); ?>/library/images/logo-white.png" />about</a></span>
+    			<header class="header">
 
-                <?php
-                    $cart = WC()->session->get( 'cart', array() );
-                    $actualCart = WC()->cart; ?>
+                    <img class="header" src="<?php echo get_template_directory_uri(); ?>/library/images/words-logo-white.png" />
 
-                <a href="<?php $page = get_page_by_title('Cart'); echo get_page_link($page->ID); ?>"><i class="fa fa-shopping-cart fa-2x fa-inverse"></i></a>
+                    <div class="navitems">
 
-			</header>
+                        <span class="store">
 
-            <div id="content">
+                            <a href="<?php echo home_url(); ?>">
+                                <img class="fish store" src="<?php echo get_template_directory_uri(); ?>/library/images/logo-white.png" />
+                                home
+                            </a>
+
+                        </span>
+                        <span class="store">
+
+                            <a href="<?php echo home_url(); ?>/shop/">
+                                <img class="fish store" src="<?php echo get_template_directory_uri(); ?>/library/images/logo-white.png" />
+                                shop
+                            </a>
+
+                        </span>
+                        <span class="about">
+
+                            <a href="<?php echo home_url(); ?>/about/">
+                                <img class="fish about" src="<?php echo get_template_directory_uri(); ?>/library/images/logo-white.png" />
+                                about
+                            </a>
+                            
+                        </span>
+
+                    </div>
+
+                    <?php
+                        $cart = WC()->session->get( 'cart', array() );
+                        $actualCart = WC()->cart; ?>
+
+                    <a href="<?php $page = get_page_by_title('Cart'); echo get_page_link($page->ID); ?>"><i class="fa fa-shopping-cart fa-2x fa-inverse"></i></a>
+
+    			</header>
+
+                <div id="content">

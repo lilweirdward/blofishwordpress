@@ -25,9 +25,13 @@ get_header( 'shop' ); ?>
         do_action( 'woocommerce_before_main_content' );
     ?>
 
+    <?php
+        if ( ! is_shop() )
+        { ?>
+
     <div class="section side">
 
-        <div class="wrap">
+        <!-- <div class="wrap">
 
             <img class="header" src="<?php echo get_template_directory_uri(); ?>/library/images/words-logo.png" />
 
@@ -66,7 +70,7 @@ get_header( 'shop' ); ?>
                 For us at BLoFISH Clothing, "All for All" isn't just our slogan, it is our lifestyle, one we live and breathe every moment. Share your story, and share the message: #A4A
             </p>
 
-        </div>
+        </div> -->
 
 		<?php //do_action( 'woocommerce_archive_description' ); ?>
 
@@ -118,13 +122,6 @@ get_header( 'shop' ); ?>
 		do_action( 'woocommerce_after_main_content' );
 	?>
 
-	<?php
-		/**
-		 * woocommerce_sidebar hook
-		 *
-		 * @hooked woocommerce_get_sidebar - 10
-		 */
-		//do_action( 'woocommerce_sidebar' );
-	?>
+	<?php } ?>
 
 <?php get_footer( 'shop' ); ?>

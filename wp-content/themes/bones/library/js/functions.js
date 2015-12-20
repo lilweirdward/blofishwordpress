@@ -2,8 +2,8 @@
     'use strict';
     var $main = $('#main'),
         options = {
-            prefetch: true,
-            pageCacheSize: 4,
+            prefetch: false,
+            pageCacheSize: 0,
             onStart: {
                 duration: 250,
                 render: function (url, $container) {
@@ -19,6 +19,7 @@
                 }
             },
             onAfter: function ($container, $newContent) {
+                console.log('executed redrawing of .ready');
                 $.readyFn.execute();
             }
         },

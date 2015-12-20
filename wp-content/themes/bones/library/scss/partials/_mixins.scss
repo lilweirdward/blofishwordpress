@@ -86,7 +86,7 @@ KEYFRAMES
 @mixin animation($animation...) {
     $prefixes:      ("-webkit-", "" );
     @each $prefix in $prefixes {
-      #{$prefix}transition: $animation;
+      #{$prefix}animation: $animation;
     }
 }
 
@@ -95,8 +95,22 @@ TRANSFORM
 *********************/
 
 @mixin transform($transforms...) {
-    $prefixes:      ("-webkit-", "-moz-", "-ms-", "-o-", "" );
+    $prefixes:      ("-webkit-", "" );
     @each $prefix in $prefixes {
-      #{$prefix}transition: $transforms;
+      #{$prefix}transform: $transforms;
+    }
+}
+
+@mixin transform-style($transforms...) {
+    $prefixes:      ("-webkit-", "" );
+    @each $prefix in $prefixes {
+      #{$prefix}transform-style: $transforms;
+    }
+}
+
+@mixin perspective($perspective...) {
+    $prefixes:      ("-webkit-", "" );
+    @each $prefix in $prefixes {
+      #{$prefix}perspective: $perspective;
     }
 }
