@@ -239,7 +239,7 @@ can replace these fonts, change it in your scss files
 and be up and running in seconds.
 */
 function bones_fonts() {
-  wp_enqueue_style('googleFonts', 'http://fonts.googleapis.com/css?family=Quicksand|Merriweather:300');
+  wp_enqueue_style('googleFonts', 'http://fonts.googleapis.com/css?family=Quicksand:300,400|Raleway:300,700');
   wp_enqueue_style('fontAwesome', 'http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css');
 }
 

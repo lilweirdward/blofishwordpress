@@ -1,19 +1,27 @@
 <?php get_header(); ?>
 
-                <div id="store-half" class="half store scene_element scene_element--fadein">
+                <a href="<?php echo home_url(); ?>/shop/">
 
-                    <div class="background"></div>
+                    <div id="store-half" class="half store scene_element scene_element--fadein">
 
-                    <a href="<?php echo home_url(); ?>/shop/"><h1 class="center">Shop</h1></a>
+                        <div class="background"></div>
 
-                </div>
+                        <h1 class="center">Shop</h1>
 
-                <div id="about-half" class="half about scene_element scene_element--fadein">
+                    </div>
 
-                    <div class="background"></div>
+                </a>
 
-                    <a href="<?php echo home_url(); ?>/about/"><h1 class="center">About</h1></a>
+                <a href="<?php echo home_url(); ?>/about/">
 
-                </div>
+                    <div id="about-half" class="half about scene_element scene_element--fadein">
+
+                        <div class="background"></div>
+
+                        <h1 class="center">About</h1>
+
+                    </div>
+
+                </a>
 
 <?php get_footer(); ?>

@@ -700,17 +700,17 @@ class WC_Shortcodes {
 
 		while ( $single_product->have_posts() ) : $single_product->the_post(); wp_enqueue_script( 'wc-single-product' ); ?>
 
-			<!-- <div class="single-product" data-product-page-preselected-id="<?php echo esc_attr( $preselected_id ); ?>"> -->
+			<div class="single-product" data-product-page-preselected-id="<?php echo esc_attr( $preselected_id ); ?>">
 
 				<?php wc_get_template_part( 'content', 'single-product' ); ?>
 
-			<!-- </div> -->
+			</div>
 
 		<?php endwhile; // end of the loop.
 
 		wp_reset_postdata();
 
-		return /*'<div class="woocommerce">' .*/ ob_get_clean() /*. '</div>'*/;
+		return '<div class="woocommerce">' . ob_get_clean() . '</div>';
 	}
 
 	/**
