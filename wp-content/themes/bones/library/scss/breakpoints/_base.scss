@@ -582,6 +582,10 @@ PRODUCT PAGE
                         top: 2rem;
                         opacity: 1;
                     }
+                    h4 {
+                        top: 4rem;
+                        opacity: 1;
+                    }
                     span.button {
                         bottom: 2rem;
                         opacity: 1;
@@ -599,7 +603,7 @@ PRODUCT PAGE
                 text-align: center;
                 z-index: 2;
                 @include transition(background-color $transition);
-                h3 {
+                h3, h4 {
                     position: absolute;
                     top: 0; left: 0; right: 0;
                     margin: 0;
