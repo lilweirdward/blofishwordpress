@@ -23,23 +23,21 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 		<p class="stock out-of-stock"><?php _e( 'This product is currently out of stock and unavailable.', 'woocommerce' ); ?></p>
 	<?php else : ?>
 		<div class="variations">
-			<!-- <tbody> -->
-				<?php foreach ( $attributes as $attribute_name => $options ) : ?>
-					<fieldset>
-						<legend><?php echo wc_attribute_label( $attribute_name ); ?></legend>
-						<!-- <td class="value"> -->
-							<?php
-								$selected = isset( $_REQUEST[ 'attribute_' . sanitize_title( $attribute_name ) ] ) ? wc_clean( $_REQUEST[ 'attribute_' . sanitize_title( $attribute_name ) ] ) : $product->get_variation_default_attribute( $attribute_name );
-								wc_dropdown_variation_attribute_options( array( 'options' => $options, 'attribute' => $attribute_name, 'product' => $product, 'selected' => $selected ) );
-							?>
-						<!-- </td> -->
-					</fieldset>
+			<?php foreach ( $attributes as $attribute_name => $options ) : ?>
+				<fieldset>
+					<legend><?php echo wc_attribute_label( $attribute_name ); ?></legend>
+					<!-- <td class="value"> -->
+						<?php
+							$selected = isset( $_REQUEST[ 'attribute_' . sanitize_title( $attribute_name ) ] ) ? wc_clean( $_REQUEST[ 'attribute_' . sanitize_title( $attribute_name ) ] ) : $product->get_variation_default_attribute( $attribute_name );
+							wc_dropdown_variation_attribute_options( array( 'options' => $options, 'attribute' => $attribute_name, 'product' => $product, 'selected' => $selected ) );
+						?>
+					<!-- </td> -->
+				</fieldset>
 
-                    <?php
-                        echo end( $attribute_keys ) === $attribute_name ? '<a class="reset_variations" href="#">' . __( 'Clear selection', 'woocommerce' ) . '</a>' : '';
+                <?php
+                    echo end( $attribute_keys ) === $attribute_name ? '<a class="reset_variations" href="#">' . __( 'Clear selection', 'woocommerce' ) . '</a>' : '';
 
-                endforeach;?>
-			<!-- </tbody> -->
+            endforeach;?>
 
     		<?php do_action( 'woocommerce_before_add_to_cart_button' ); ?>
 

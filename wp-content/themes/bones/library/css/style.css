@@ -1611,7 +1611,7 @@ UNIVERSAL STYLES (e.g., loading screen, logo)
   position: fixed;
   top: 1rem;
   right: 1rem;
-  width: 3rem;
+  width: 5rem;
   z-index: 12;
 }
 #logo img {
@@ -1759,7 +1759,7 @@ INDEX PAGE - HALFS
   top: 0;
   left: 0;
   bottom: 0;
-  height: 5.5rem;
+  height: 6rem;
   width: 100%;
   color: white;
   margin: auto;
@@ -1858,6 +1858,7 @@ PRODUCT PAGE
   font-size: 5.25em;
 }
 .categories .category, .categories .top, .categories .mid, .categories .low {
+  position: relative;
   height: 33.33333333333333333%;
   width: 100%;
   margin: 0;
@@ -1875,6 +1876,15 @@ PRODUCT PAGE
 .categories .category:hover, .categories .top:hover, .categories .mid:hover, .categories .low:hover {
   background-size: 120% auto;
 }
+.categories .category h1, .categories .top h1, .categories .mid h1, .categories .low h1 {
+  height: 6rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
 .categories .top {
   background-image: url("../images/top.png");
 }
@@ -1887,10 +1897,12 @@ PRODUCT PAGE
 
 .section.side, .side.half {
   position: absolute;
-  top: 5rem;
+  top: 0;
   right: 0;
   width: 85%;
   min-height: 100%;
+  margin-top: 5rem;
+  padding-bottom: 8rem;
 }
 .section.side img.header, .side.half img.header {
   display: block;
@@ -2150,6 +2162,33 @@ PRODUCT PAGE
 }
 .woocommerce #content div.product div.product_details .wc-tab table, .woocommerce #content div.product div.product_details .wc-tab tr, .woocommerce #content div.product div.product_details .wc-tab tr.alt, .woocommerce #content div.product div.product_details .wc-tab th, .woocommerce #content div.product div.product_details .wc-tab td, .woocommerce #content div.product div.product_details .entry-content table, .woocommerce #content div.product div.product_details .entry-content tr, .woocommerce #content div.product div.product_details .entry-content tr.alt, .woocommerce #content div.product div.product_details .entry-content th, .woocommerce #content div.product div.product_details .entry-content td {
   background-color: transparent;
+}
+
+footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem 0;
+  margin: 0;
+  background-color: #221e1f;
+  color: white;
+}
+footer img {
+  float: left;
+  width: 5rem;
+}
+footer .pages {
+  float: right;
+}
+footer .pages a {
+  text-transform: uppercase;
+}
+footer span.copyright {
+  display: block;
+  width: 100%;
+  text-align: center;
+  clear: both;
 }
 
 /*********************
