@@ -403,10 +403,19 @@ ABOUT PAGE
         background-image: url('../images/groupfence.jpg');
         background-size: cover;
         text-align: center;
+        padding: 5rem 0;
         img {
             display: block;
             width: 50%;
-            margin: 3rem auto;
+            margin: 0 auto;
+        }
+        h2 {
+            width: 50%;
+            margin: 1rem auto;
+            font-family: $header;
+            font-weight: 300;
+            font-size: 3rem;
+            color: white;
         }
         .button {
             color: $black;
@@ -419,10 +428,12 @@ ABOUT PAGE
         }
     }
     &.ours {
-        img {
+        .fullheight {
             position: absolute;
             top: 0; bottom: 0; left: 0;
             width: 40%;
+            background-image: url('../images/midnightblueinsta.jpg');
+            background-size: cover;
         }
         .wrap {
             max-width: 60%;
