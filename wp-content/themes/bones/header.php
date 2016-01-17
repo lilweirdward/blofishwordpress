@@ -82,7 +82,23 @@
                                 <img class="fish about" src="<?php echo get_template_directory_uri(); ?>/library/images/logo-white.png" />
                                 about
                             </a>
-                            
+
+                        </span>
+                        <span class="about">
+
+                            <a href="<?php echo home_url(); ?>/about/">
+                                <img class="fish about" src="<?php echo get_template_directory_uri(); ?>/library/images/logo-white.png" />
+                                contact
+                            </a>
+
+                        </span>
+                        <span class="about">
+
+                            <a href="<?php echo home_url(); ?>/about/">
+                                <img class="fish about" src="<?php echo get_template_directory_uri(); ?>/library/images/logo-white.png" />
+                                size chart
+                            </a>
+
                         </span>
 
                     </div>
