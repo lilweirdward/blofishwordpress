@@ -62,6 +62,10 @@ function bones_ahoy() {
 
 // let's get this party started
 add_action( 'after_setup_theme', 'bones_ahoy' );
+add_action( 'after_setup_theme', 'woocommerce_support' );
+function woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+}
 
 
 /************* OEMBED SIZE OPTIONS *************/
