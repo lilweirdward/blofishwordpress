@@ -13,6 +13,6 @@
 
     </div>
 
-    <span class="copyright">Copyright &copy; <?php echo date("Y"); ?> BLoFISH Clothing</span>
+    <span class="copyright">Copyright &copy; <?php echo date("Y"); ?> BLoFISH Clothing. Built by <a href="https://github.com/lilweirdward">Zach Woodward</a></span>
 
 </footer>

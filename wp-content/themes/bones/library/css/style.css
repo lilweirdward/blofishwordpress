@@ -2176,19 +2176,32 @@ footer {
 }
 footer img {
   float: left;
-  width: 5rem;
+  width: 10rem;
+  margin-left: 7.5%;
 }
 footer .pages {
   float: right;
+  height: 1.5rem;
+  margin-right: 7.5%;
+  margin-top: 0.65625rem;
 }
 footer .pages a {
+  color: white;
+  padding: 0 0.5rem;
+  border-left: 1px solid white;
   text-transform: uppercase;
+}
+footer .pages a:first-child {
+  border-left: 0;
 }
 footer span.copyright {
   display: block;
   width: 100%;
   text-align: center;
   clear: both;
+}
+footer span.copyright a {
+  color: white;
 }
 
 /*********************
