@@ -261,16 +261,17 @@ header.header {
     }
     .navitems {
         position: absolute;
-        top: 0; left: 10rem; bottom: 0;
-        width: 5rem;
-        height: 23rem;
-        margin: auto 0;
+        top: 0; right: 0; bottom: 0; left: 0;
+        width: 70%;
+        height: 6.25rem;
+        margin: auto;
+        text-align: center;
         span {
             // position: absolute;
             // top: 0; left: 0;
-            display: block;
+            display: inline-block;
             width: 5rem;
-            margin: 1rem 0;
+            margin: 0 1rem;
             text-align: center;
             color: white;
             font-size: 0.75rem;
@@ -399,7 +400,7 @@ ABOUT PAGE
 *********************/
 .section {
     &.beginning {
-        background-image: url('../images/about.png');
+        background-image: url('../images/groupfence.jpg');
         background-size: cover;
         text-align: center;
         img {
