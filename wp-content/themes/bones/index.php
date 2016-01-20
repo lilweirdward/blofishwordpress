@@ -4,7 +4,7 @@
 
                     <div class="intro">
 
-                        <img src="/blofishwordpress/wp-content/themes/bones/library/images/words-logo-white.png" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/library/images/words-logo-white.png" />
                         <h2>The world's first gender-neutral clothing company</h2>
 
                     </div>
