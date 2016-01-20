@@ -24,5 +24,8 @@ jQuery(document).ready(function($) {
         }
     });
 
+    $('#bringtotop').click(function() {
+        $(this).parent().addClass('totop');
+    });
 
 }); /* end of as page load scripts */

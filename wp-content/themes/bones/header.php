@@ -50,13 +50,15 @@
 
 		<div id="main" class="m-scene">
 
-            <a href="#" id="logo"><img src="<?php echo get_template_directory_uri(); ?>/library/images/diamondhat.png" /></a>
+            <span id="logo"><img src="<?php echo get_template_directory_uri(); ?>/library/images/diamondhat.png" /></span>
 
             <div id="card">
 
     			<header class="header">
 
-                    <img class="header" src="<?php echo get_template_directory_uri(); ?>/library/images/words-logo-white.png" />
+                    <a href="<?php echo home_url(); ?>">
+                        <img class="header" src="<?php echo get_template_directory_uri(); ?>/library/images/words-logo-white.png" />
+                    </a>
 
                     <div class="navitems">
 

@@ -235,6 +235,7 @@ UNIVERSAL STYLES (e.g., loading screen, logo)
     top: 1rem; right: 1rem;
     width: 5rem;
     z-index: 12;
+    cursor: pointer;
     // &:hover {
     //     & ~ #content, & ~ #content > .categories.side {
     //         left: -5rem;
@@ -349,51 +350,84 @@ old.header {
 INDEX PAGE - HALFS
 *********************/
 
-.half {
-    @extend .section;
-    position: relative;
-    height: 50%;
+.homespace {
+    @extend .full-screen;
     overflow: hidden;
-    padding: 0;
-    color: white;
-    background-color: transparent;
-    &:hover {
-        .background {
-            @include transform(scale(1.1,1.1));
-        }
-    }
-    .background {
-        position: absolute;
+    .intro {
+        @extend .section.beginning;
         height: 100%;
-        width: 100%;
-        background-size: cover;
-        z-index: -1;
-        @include transition(all $transition);
     }
-    &.store {
-        .background {
-            background-image: url('../images/store.png');
+    .wrapper {
+        @extend .full-screen;
+        top: 75%;
+        box-shadow: rgba($black, 0.75) 0 0 0.75rem;
+        @include transition(top $transition);
+        &:hover {
+            top: 70%;
         }
-    }
-    &.about {
-        .background {
-            background-image: url('../images/about.png');
+        &.totop {
+            top: 0;
+            i {
+                opacity: 0;
+                z-index: -1;
+            }
         }
-    }
-    h1 {
-        text-transform: uppercase;
-        &.center {
+        i {
             position: absolute;
-            top: 0; left: 0; bottom: 0;
-            height: 6rem;
-            width: 100%;
+            top: 5%; right: 0; left: 0;
+            width: 4.125rem;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            background-color: white;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 2;
+        }
+        .half {
+            @extend .section;
+            position: relative;
+            height: 50%;
+            overflow: hidden;
+            padding: 0;
             color: white;
-            margin: auto;
+            background-color: transparent;
+            &:hover {
+                .background {
+                    @include transform(scale(1.1,1.1));
+                }
+            }
+            .background {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                background-size: cover;
+                z-index: -1;
+                @include transition(all $transition);
+            }
+            &.store {
+                .background {
+                    background-image: url('../images/store.png');
+                }
+            }
+            &.about {
+                .background {
+                    background-image: url('../images/about.png');
+                }
+            }
+            h1 {
+                text-transform: uppercase;
+                &.center {
+                    position: absolute;
+                    top: 0; left: 0; bottom: 0;
+                    height: 6rem;
+                    width: 100%;
+                    color: white;
+                    margin: auto;
+                }
+            }
         }
     }
 }
-
-
 
 /*********************
 ABOUT PAGE
