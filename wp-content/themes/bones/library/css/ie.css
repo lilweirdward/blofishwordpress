@@ -259,142 +259,79 @@ come into play. Have fun!
 /*********************
 GENERAL STYLES
 *********************/
-/*********************
-LAYOUT & GRID STYLES
-*********************/
-.wrap {
-  width: 760px;
+body {
+  font-size: 100%;
 }
 
-/*********************
-HEADER STYLES
-*********************/
-/*********************
-NAVIGATION STYLES
-*********************/
-.nav {
-  border: 0;
-  /* end .menu ul li */
-  /* highlight current page */
-  /* end current highlighters */
+header.header img.header {
+  height: 5rem;
+  margin: 0 auto;
 }
-.nav ul {
-  background: #221e1f;
-  margin-top: 0;
+header.header .navitems {
+  width: 70%;
 }
-.nav li {
-  float: left;
-  position: relative;
-  /*
-  plan your menus and drop-downs wisely.
-  */
-  /* showing sub-menus */
+header.header .navitems span {
+  width: 5rem;
+  margin: 0 1rem;
 }
-.nav li a {
-  border-bottom: 0;
-  /*
-  you can use hover styles here even though this size
-  has the possibility of being a mobile device.
-  */
+header.header .navitems span img {
+  width: 5rem;
 }
-.nav li a:hover, .nav li a:focus {
-  color: white;
-  text-decoration: underline;
+header.header i.fa-shopping-cart {
+  bottom: 5rem;
 }
-.nav li ul.sub-menu,
-.nav li ul.children {
-  margin-top: 0;
-  border: 1px solid #ccc;
-  border-top: 0;
-  position: absolute;
-  visibility: hidden;
-  z-index: 8999;
-  /* highlight sub-menu current page */
+
+.categories.side {
+  width: 15%;
 }
-.nav li ul.sub-menu li,
-.nav li ul.children li {
-  /*
-  if you need to go deeper, go nuts
-  just remember deeper menus suck
-  for usability. k, bai.
-  */
-}
-.nav li ul.sub-menu li a,
-.nav li ul.children li a {
-  padding-left: 10px;
-  border-right: 0;
+.categories.side .category h1 {
   display: block;
-  width: 180px;
-  border-bottom: 1px solid #ccc;
 }
-.nav li ul.sub-menu li:last-child a,
-.nav li ul.children li:last-child a {
-  border-bottom: 0;
-}
-.nav li ul.sub-menu li ul,
-.nav li ul.children li ul {
-  top: 0;
-  left: 100%;
-}
-.nav li:hover > ul {
-  top: auto;
-  visibility: visible;
+.categories.side .category i {
+  display: none;
 }
 
-/* end .nav */
-/*********************
-SIDEBARS & ASIDES
-*********************/
-.sidebar {
-  margin-top: 2.2em;
+.section.side {
+  width: 85%;
+}
+.section.side ul.products li.product {
+  width: 25%;
 }
 
-.widgettitle {
-  border-bottom: 2px solid #444;
-  margin-bottom: 0.75em;
+.woocommerce #content div.product h1 {
+  font-size: 3rem;
+}
+.woocommerce #content div.product div.images img {
+  width: 75%;
+}
+.woocommerce #content div.product div.images div.thumbnails {
+  width: 25%;
+}
+.woocommerce #content div.product div.images div.thumbnails a img {
+  width: 50%;
+  float: none;
+  margin: 1rem auto;
+}
+.woocommerce #content div.product div.product_details form.cart .variations fieldset {
+  width: 32.5%;
+}
+.woocommerce #content div.product div.product_details form.cart .variations .single_variation_wrap {
+  width: 35%;
+}
+.woocommerce #content div.product div.product_details form.cart .variations .single_variation_wrap fieldset.quantity {
+  width: 35%;
+}
+.woocommerce #content div.product div.product_details form.cart .variations .single_variation_wrap .button {
+  width: 65%;
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
+}
+.woocommerce #content div.product div.product_details .wc-tab#tab-description, .woocommerce #content div.product div.product_details .wc-tab#tab-additional_information, .woocommerce #content div.product div.product_details .entry-content#tab-description, .woocommerce #content div.product div.product_details .entry-content#tab-additional_information {
+  width: 50%;
+  float: left;
+  clear: none;
 }
 
-.widget {
-  padding: 0 10px;
-  margin: 2.2em 0;
-}
-.widget ul li {
-  margin-bottom: 0.75em;
-  /* deep nesting */
-}
-.widget ul li ul {
-  margin-top: 0.75em;
-  padding-left: 1em;
-}
-
-/* links widget */
-/* meta widget */
-/* pages widget */
-/* recent-posts widget */
-/* archives widget */
-/* tag-cloud widget */
-/* calendar widget */
-/* category widget */
-/* recent-comments widget */
-/* search widget */
-/* text widget */
-/*********************
-FOOTER STYLES
-*********************/
-/*
-you'll probably need to do quite a bit
-of overriding here if you styled them for
-mobile. Make sure to double check these!
-*/
-.footer-links ul li {
-  /*
-  be careful with the depth of your menus.
-  it's very rare to have multi-depth menus in
-  the footer.
-  */
-}
-
-/* end .footer-links */
 /******************************************************************
 Site Name:
 Author:
@@ -405,10 +342,6 @@ This is the desktop size. It's larger than an iPad so it will only
 be seen on the Desktop.
 
 ******************************************************************/
-.wrap {
-  width: 1040px;
-}
-
 /*
 you can call the larger styles if you want, but there's really no need
 */

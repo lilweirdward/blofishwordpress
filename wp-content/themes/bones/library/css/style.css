@@ -1393,7 +1393,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Raleway", sans-serif;
-  font-size: 100%;
+  font-size: 0.75rem;
   font-weight: 300;
   line-height: 1.5;
   background-color: #eeeeee;
@@ -1630,8 +1630,8 @@ header.header {
 }
 header.header img.header {
   display: block;
-  height: 5rem;
-  margin: 0 auto;
+  width: 75%;
+  margin: 5rem auto 0;
 }
 header.header .navitems {
   position: absolute;
@@ -1639,15 +1639,16 @@ header.header .navitems {
   right: 0;
   bottom: 0;
   left: 0;
-  width: 70%;
+  width: 90%;
   height: 6.25rem;
   margin: auto;
   text-align: center;
 }
 header.header .navitems span {
+  position: relative;
   display: inline-block;
-  width: 5rem;
-  margin: 0 1rem;
+  width: 20%;
+  margin: 0;
   text-align: center;
   color: white;
   font-size: 0.75rem;
@@ -1661,14 +1662,14 @@ header.header .navitems span a:hover {
 }
 header.header .navitems span img {
   display: block;
-  width: 5rem;
+  width: 80%;
   margin: 0 auto;
   padding: 0.5rem 0;
 }
 header.header i.fa-shopping-cart {
   position: absolute;
   right: 0;
-  bottom: 5rem;
+  bottom: 10%;
   left: 0;
   text-align: center;
 }
@@ -1881,7 +1882,7 @@ PRODUCT PAGE
 }
 .categories.side {
   position: fixed;
-  width: 15%;
+  width: 30%;
 }
 .categories.side .category, .categories.side .top, .categories.side .mid, .categories.side .low {
   background-image: none;
@@ -1890,10 +1891,11 @@ PRODUCT PAGE
 .categories.side .category.active, .categories.side .active.top, .categories.side .active.mid, .categories.side .active.low {
   background-color: white;
 }
-.categories.side .category.active h1, .categories.side .active.top h1, .categories.side .active.mid h1, .categories.side .active.low h1 {
+.categories.side .category.active h1, .categories.side .active.top h1, .categories.side .active.mid h1, .categories.side .active.low h1, .categories.side .category.active i, .categories.side .active.top i, .categories.side .active.mid i, .categories.side .active.low i {
   color: #221e1f;
 }
 .categories.side .category h1, .categories.side .top h1, .categories.side .mid h1, .categories.side .low h1 {
+  display: none;
   font-size: 4rem;
 }
 .categories.side .category i, .categories.side .top i, .categories.side .mid i, .categories.side .low i {
@@ -1902,9 +1904,6 @@ PRODUCT PAGE
   padding: .67em 0;
   -webkit-transition: font-size 0.3s;
   transition: font-size 0.3s;
-}
-.categories.side .category i:hover, .categories.side .top i:hover, .categories.side .mid i:hover, .categories.side .low i:hover {
-  font-size: 5.25em;
 }
 .categories .category, .categories .top, .categories .mid, .categories .low {
   position: relative;
@@ -1934,6 +1933,9 @@ PRODUCT PAGE
   left: 0;
   margin: auto;
 }
+.categories .category i, .categories .top i, .categories .mid i, .categories .low i {
+  display: none;
+}
 .categories .top {
   background-image: url("../images/top.png");
 }
@@ -1948,7 +1950,7 @@ PRODUCT PAGE
   position: absolute;
   top: 0;
   right: 0;
-  width: 85%;
+  width: 70%;
   min-height: 100%;
   margin-top: 5rem;
   padding-bottom: 8rem;
@@ -1983,7 +1985,7 @@ PRODUCT PAGE
   margin: 0;
 }
 .section.side ul.products li.product, .homespace .wrapper .side.half ul.products li.product {
-  width: 25%;
+  width: 100%;
   float: left;
   padding: 0.375rem 1rem;
   margin: 0;
@@ -2090,13 +2092,16 @@ PRODUCT PAGE
 .woocommerce .woocommerce-info:before, .woocommerce .woocommerce-message:before {
   color: #221e1f;
 }
+.woocommerce table.shop_attributes th {
+  width: auto;
+}
 
 .woocommerce #content div.product {
   width: 80%;
   margin: 0 auto;
 }
 .woocommerce #content div.product h1 {
-  font-size: 3rem;
+  font-size: 2rem;
   text-align: left;
 }
 .woocommerce #content div.product:after {
@@ -2114,11 +2119,11 @@ PRODUCT PAGE
   clear: both;
 }
 .woocommerce #content div.product div.images img {
-  width: 75%;
+  width: 100%;
   float: left;
 }
 .woocommerce #content div.product div.images div.thumbnails {
-  width: 25%;
+  width: 100%;
   float: left;
 }
 .woocommerce #content div.product div.images div.thumbnails a {
@@ -2128,8 +2133,8 @@ PRODUCT PAGE
 }
 .woocommerce #content div.product div.images div.thumbnails a img {
   width: 50%;
-  float: none;
-  margin: 1rem auto;
+  float: left;
+  margin: 0;
 }
 .woocommerce #content div.product div.images div.thumbnails a.first {
   clear: none;
@@ -2168,7 +2173,7 @@ PRODUCT PAGE
 }
 .woocommerce #content div.product div.product_details form.cart .variations fieldset {
   float: left;
-  width: 32.5%;
+  width: 100%;
   position: relative;
   margin: 0;
   padding: 0 1rem;
@@ -2188,10 +2193,9 @@ PRODUCT PAGE
 }
 .woocommerce #content div.product div.product_details form.cart .variations .single_variation_wrap {
   float: left;
-  width: 35%;
+  width: 100%;
 }
 .woocommerce #content div.product div.product_details form.cart .variations .single_variation_wrap fieldset.quantity {
-  width: 35%;
   position: relative;
 }
 .woocommerce #content div.product div.product_details form.cart .variations .single_variation_wrap fieldset.quantity div.quantity {
@@ -2201,17 +2205,13 @@ PRODUCT PAGE
   width: 100%;
 }
 .woocommerce #content div.product div.product_details form.cart .variations .single_variation_wrap .button {
-  margin-top: 1.5rem;
-  width: 65%;
+  width: 6.875rem;
+  font-size: 0.75rem;
+  margin: 0 auto;
 }
 .woocommerce #content div.product div.product_details .wc-tab, .woocommerce #content div.product div.product_details .entry-content {
   padding: 0 5%;
   clear: both;
-}
-.woocommerce #content div.product div.product_details .wc-tab#tab-description, .woocommerce #content div.product div.product_details .wc-tab#tab-additional_information, .woocommerce #content div.product div.product_details .entry-content#tab-description, .woocommerce #content div.product div.product_details .entry-content#tab-additional_information {
-  width: 50%;
-  float: left;
-  clear: none;
 }
 .woocommerce #content div.product div.product_details .wc-tab table, .woocommerce #content div.product div.product_details .wc-tab tr, .woocommerce #content div.product div.product_details .wc-tab tr.alt, .woocommerce #content div.product div.product_details .wc-tab th, .woocommerce #content div.product div.product_details .wc-tab td, .woocommerce #content div.product div.product_details .entry-content table, .woocommerce #content div.product div.product_details .entry-content tr, .woocommerce #content div.product div.product_details .entry-content tr.alt, .woocommerce #content div.product div.product_details .entry-content th, .woocommerce #content div.product div.product_details .entry-content td {
   background-color: transparent;
@@ -2961,142 +2961,78 @@ you can add resource intensive styles.
   /*********************
   GENERAL STYLES
   *********************/
-  /*********************
-  LAYOUT & GRID STYLES
-  *********************/
-  .wrap {
-    width: 760px;
+  body {
+    font-size: 100%;
   }
 
-  /*********************
-  HEADER STYLES
-  *********************/
-  /*********************
-  NAVIGATION STYLES
-  *********************/
-  .nav {
-    border: 0;
-    /* end .menu ul li */
-    /* highlight current page */
-    /* end current highlighters */
+  header.header img.header {
+    height: 5rem;
+    margin: 0 auto;
   }
-  .nav ul {
-    background: #221e1f;
-    margin-top: 0;
+  header.header .navitems {
+    width: 70%;
   }
-  .nav li {
-    float: left;
-    position: relative;
-    /*
-    plan your menus and drop-downs wisely.
-    */
-    /* showing sub-menus */
+  header.header .navitems span {
+    width: 5rem;
+    margin: 0 1rem;
   }
-  .nav li a {
-    border-bottom: 0;
-    /*
-    you can use hover styles here even though this size
-    has the possibility of being a mobile device.
-    */
+  header.header .navitems span img {
+    width: 5rem;
   }
-  .nav li a:hover, .nav li a:focus {
-    color: white;
-    text-decoration: underline;
+  header.header i.fa-shopping-cart {
+    bottom: 5rem;
   }
-  .nav li ul.sub-menu,
-  .nav li ul.children {
-    margin-top: 0;
-    border: 1px solid #ccc;
-    border-top: 0;
-    position: absolute;
-    visibility: hidden;
-    z-index: 8999;
-    /* highlight sub-menu current page */
+
+  .categories.side {
+    width: 15%;
   }
-  .nav li ul.sub-menu li,
-  .nav li ul.children li {
-    /*
-    if you need to go deeper, go nuts
-    just remember deeper menus suck
-    for usability. k, bai.
-    */
-  }
-  .nav li ul.sub-menu li a,
-  .nav li ul.children li a {
-    padding-left: 10px;
-    border-right: 0;
+  .categories.side .category h1, .categories.side .top h1, .categories.side .mid h1, .categories.side .low h1 {
     display: block;
-    width: 180px;
-    border-bottom: 1px solid #ccc;
   }
-  .nav li ul.sub-menu li:last-child a,
-  .nav li ul.children li:last-child a {
-    border-bottom: 0;
-  }
-  .nav li ul.sub-menu li ul,
-  .nav li ul.children li ul {
-    top: 0;
-    left: 100%;
-  }
-  .nav li:hover > ul {
-    top: auto;
-    visibility: visible;
+  .categories.side .category i, .categories.side .top i, .categories.side .mid i, .categories.side .low i {
+    display: none;
   }
 
-  /* end .nav */
-  /*********************
-  SIDEBARS & ASIDES
-  *********************/
-  .sidebar {
-    margin-top: 2.2em;
+  .section.side, .homespace .wrapper .side.half {
+    width: 85%;
+  }
+  .section.side ul.products li.product, .homespace .wrapper .side.half ul.products li.product {
+    width: 25%;
   }
 
-  .widgettitle {
-    border-bottom: 2px solid #444;
-    margin-bottom: 0.75em;
+  .woocommerce #content div.product h1 {
+    font-size: 3rem;
   }
-
-  .widget {
-    padding: 0 10px;
-    margin: 2.2em 0;
+  .woocommerce #content div.product div.images img {
+    width: 75%;
   }
-  .widget ul li {
-    margin-bottom: 0.75em;
-    /* deep nesting */
+  .woocommerce #content div.product div.images div.thumbnails {
+    width: 25%;
   }
-  .widget ul li ul {
-    margin-top: 0.75em;
-    padding-left: 1em;
+  .woocommerce #content div.product div.images div.thumbnails a img {
+    width: 50%;
+    float: none;
+    margin: 1rem auto;
   }
-
-  /* links widget */
-  /* meta widget */
-  /* pages widget */
-  /* recent-posts widget */
-  /* archives widget */
-  /* tag-cloud widget */
-  /* calendar widget */
-  /* category widget */
-  /* recent-comments widget */
-  /* search widget */
-  /* text widget */
-  /*********************
-  FOOTER STYLES
-  *********************/
-  /*
-  you'll probably need to do quite a bit
-  of overriding here if you styled them for
-  mobile. Make sure to double check these!
-  */
-  .footer-links ul li {
-    /*
-    be careful with the depth of your menus.
-    it's very rare to have multi-depth menus in
-    the footer.
-    */
+  .woocommerce #content div.product div.product_details form.cart .variations fieldset {
+    width: 32.5%;
   }
-
-  /* end .footer-links */
+  .woocommerce #content div.product div.product_details form.cart .variations .single_variation_wrap {
+    width: 35%;
+  }
+  .woocommerce #content div.product div.product_details form.cart .variations .single_variation_wrap fieldset.quantity {
+    width: 35%;
+  }
+  .woocommerce #content div.product div.product_details form.cart .variations .single_variation_wrap .button {
+    width: 65%;
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+  }
+  .woocommerce #content div.product div.product_details .wc-tab#tab-description, .woocommerce #content div.product div.product_details .wc-tab#tab-additional_information, .woocommerce #content div.product div.product_details .entry-content#tab-description, .woocommerce #content div.product div.product_details .entry-content#tab-additional_information {
+    width: 50%;
+    float: left;
+    clear: none;
+  }
 }
 /*********************
 DESKTOP
@@ -3115,9 +3051,6 @@ you can add resource intensive styles.
   be seen on the Desktop.
   
   ******************************************************************/
-  .wrap {
-    width: 1040px;
-  }
 }
 /*********************
 LARGE VIEWING SIZE

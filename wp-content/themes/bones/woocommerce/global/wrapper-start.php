@@ -30,15 +30,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 
                     <h1><?php echo $category->name; ?></h1>
                     <?php
-                        //if ( $category->slug == 'top' ) { ?>
-                            <!-- <i class="fa fa-long-arrow-up fa-5x"></i> -->
+                        if ( $category->slug == 'top' ) { ?>
+                            <i class="fa fa-long-arrow-up fa-4x"></i>
                     <?php
-                        //} elseif ( $category->slug == 'middle' ) { ?>
-                            <!-- <i class="fa fa-arrows-h fa-5x"></i> -->
+                        } elseif ( $category->slug == 'mid' ) { ?>
+                            <i class="fa fa-arrows-h fa-4x"></i>
                     <?php
-                        //} elseif ( $category->slug == 'bottom' ) { ?>
-                            <!-- <i class="fa fa-long-arrow-down fa-5x"></i> -->
-                    <?php //} ?>
+                } elseif ( $category->slug == 'low' ) { ?>
+                            <i class="fa fa-long-arrow-down fa-4x"></i>
+                    <?php } ?>
 
                 </div>
 
