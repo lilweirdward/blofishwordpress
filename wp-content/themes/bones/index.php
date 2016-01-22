@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-                <div class="homespace">
+                <!-- <div class="homespace">
 
                     <div class="intro">
 
@@ -11,7 +11,7 @@
 
                     <div class="wrapper">
 
-                        <i id="bringtotop" class="fa fa-caret-up fa-2x"></i>
+                        <i id="bringtotop" class="fa fa-caret-up fa-2x"></i> -->
 
                         <a href="<?php echo home_url(); ?>/shop/">
 
@@ -37,8 +37,8 @@
 
                         </a>
 
-                    </div>
+                    <!-- </div>
 
-                </div>
+                </div> -->
 
 <?php get_footer(); ?>
