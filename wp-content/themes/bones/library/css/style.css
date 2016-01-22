@@ -1775,15 +1775,16 @@ INDEX PAGE - HALFS
   height: 100%;
   width: 100%;
   background-size: cover;
+  background-position: center;
   z-index: -1;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 .homespace .wrapper .half.store .background {
-  background-image: url("../images/store.png");
+  background-image: url("../images/about.png");
 }
 .homespace .wrapper .half.about .background {
-  background-image: url("../images/about.png");
+  background-image: url("../images/groupfence.jpg");
 }
 .homespace .wrapper .half h1 {
   text-transform: uppercase;
@@ -1911,6 +1912,8 @@ PRODUCT PAGE
   background-size: 100% auto;
   background-position: center;
   background-repeat: no-repeat;
+  background-color: #221e1f;
+  border-bottom: 1px solid white;
   cursor: pointer;
   clear: both;
   -webkit-transition: background-size 0.3s;
@@ -1931,14 +1934,8 @@ PRODUCT PAGE
 .categories .category i, .categories .top i, .categories .mid i, .categories .low i {
   display: none;
 }
-.categories .top {
-  background-image: url("../images/top.png");
-}
-.categories .mid {
-  background-image: url("../images/store.png");
-}
 .categories .low {
-  background-image: url("../images/bottom.png");
+  border-bottom: 0;
 }
 
 .section.side, .homespace .wrapper .side.half {
