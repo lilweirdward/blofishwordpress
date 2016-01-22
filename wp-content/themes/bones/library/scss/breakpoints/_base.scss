@@ -360,12 +360,12 @@ INDEX PAGE - HALFS
     }
     .wrapper {
         @extend .full-screen;
-        top: 75%;
-        box-shadow: rgba($black, 0.75) 0 0 0.75rem;
-        @include transition(top $transition);
-        &:hover {
-            top: 70%;
-        }
+        top: 0;
+        // box-shadow: rgba($black, 0.75) 0 0 0.75rem;
+        // @include transition(top $transition);
+        // &:hover {
+        //     top: 70%;
+        // }
         &.totop {
             top: 0;
             i {
@@ -374,6 +374,7 @@ INDEX PAGE - HALFS
             }
         }
         i {
+            display: none;
             position: absolute;
             top: 5%; right: 0; left: 0;
             width: 4.125rem;

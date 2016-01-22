@@ -1735,13 +1735,7 @@ INDEX PAGE - HALFS
   height: 100%;
 }
 .homespace .wrapper {
-  top: 75%;
-  box-shadow: rgba(34, 30, 31, 0.75) 0 0 0.75rem;
-  -webkit-transition: top 0.3s;
-  transition: top 0.3s;
-}
-.homespace .wrapper:hover {
-  top: 70%;
+  top: 0;
 }
 .homespace .wrapper.totop {
   top: 0;
@@ -1751,6 +1745,7 @@ INDEX PAGE - HALFS
   z-index: -1;
 }
 .homespace .wrapper i {
+  display: none;
   position: absolute;
   top: 5%;
   right: 0;
