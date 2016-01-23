@@ -265,6 +265,7 @@ body {
 
 header.header img.header {
   height: 5rem;
+  width: auto;
   margin: 0 auto;
 }
 header.header .navitems {
