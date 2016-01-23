@@ -479,7 +479,8 @@ ABOUT PAGE
         }
     }
     &.yours {
-        background-image: url('../images/footer_lodyas.png');
+        // background-image: url('../images/footer_lodyas.png');
+        background-color: $black;
         color: white;
         .testimonials {
             width: 100%;
@@ -493,6 +494,35 @@ ABOUT PAGE
                     content: ' ';
                 }
             }
+        }
+    }
+    &.impact {}
+    &.sizingchart {
+        background-color: $black;
+        color: white;
+        table {
+            background-color: white;
+            color: black;
+            td, th {
+                padding: 1rem;
+                border: 1px solid $black;
+                img {
+                    width: 2rem;
+                }
+            }
+        }
+    }
+    &.contact {
+        .form {
+            width: 100%;
+            fieldset {
+                text-align: left;
+                border: 0;
+            }
+        }
+        .screenReader {
+            position: absolute;
+            top: -9999px; left: -9999px;
         }
     }
 }
@@ -804,6 +834,13 @@ PRODUCT PAGE
                             border: 0;
                             select {
                                 width: 100%;
+                            }
+                            a.hint {
+                                position: absolute;
+                                top: 0.125rem; right: 1rem;
+                                text-transform: uppercase;
+                                font-style: italic;
+                                font-size: 0.625rem;
                             }
                         }
                         .reset_variations {

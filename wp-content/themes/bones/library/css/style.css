@@ -1816,7 +1816,7 @@ ABOUT PAGE
   padding: 0 10%;
 }
 .section.yours, .yours.half {
-  background-image: url("../images/footer_lodyas.png");
+  background-color: #221e1f;
   color: white;
 }
 .section.yours .testimonials, .yours.half .testimonials {
@@ -1831,6 +1831,33 @@ ABOUT PAGE
 }
 .section.yours .testimonials .woocommerce-message:before, .yours.half .testimonials .woocommerce-message:before {
   content: ' ';
+}
+.section.sizingchart, .sizingchart.half {
+  background-color: #221e1f;
+  color: white;
+}
+.section.sizingchart table, .sizingchart.half table {
+  background-color: white;
+  color: black;
+}
+.section.sizingchart table td, .sizingchart.half table td, .section.sizingchart table th, .sizingchart.half table th {
+  padding: 1rem;
+  border: 1px solid #221e1f;
+}
+.section.sizingchart table td img, .sizingchart.half table td img, .section.sizingchart table th img, .sizingchart.half table th img {
+  width: 2rem;
+}
+.section.contact .form, .contact.half .form {
+  width: 100%;
+}
+.section.contact .form fieldset, .contact.half .form fieldset {
+  text-align: left;
+  border: 0;
+}
+.section.contact .screenReader, .contact.half .screenReader {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
 }
 
 /*********************
@@ -2143,6 +2170,14 @@ PRODUCT PAGE
 }
 .woocommerce #content div.product div.product_details form.cart .variations fieldset select {
   width: 100%;
+}
+.woocommerce #content div.product div.product_details form.cart .variations fieldset a.hint {
+  position: absolute;
+  top: 0.125rem;
+  right: 1rem;
+  text-transform: uppercase;
+  font-style: italic;
+  font-size: 0.625rem;
 }
 .woocommerce #content div.product div.product_details form.cart .variations .reset_variations {
   position: absolute;
@@ -2944,6 +2979,14 @@ you can add resource intensive styles.
   }
   header.header i.fa-shopping-cart {
     bottom: 5rem;
+  }
+
+  .section.sizingchart table td img, .sizingchart.half table td img, .section.sizingchart table th img, .sizingchart.half table th img {
+    width: 5rem;
+  }
+  .section.contact .form, .contact.half .form {
+    width: 70%;
+    margin: 0 auto;
   }
 
   .categories.side {

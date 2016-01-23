@@ -282,6 +282,14 @@ header.header i.fa-shopping-cart {
   bottom: 5rem;
 }
 
+.section.sizingchart table td img, .section.sizingchart table th img {
+  width: 5rem;
+}
+.section.contact .form {
+  width: 70%;
+  margin: 0 auto;
+}
+
 .categories.side {
   width: 15%;
 }

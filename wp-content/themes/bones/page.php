@@ -10,6 +10,24 @@
         		the_content();
         	?>
 
+            <div id="contact" class="section contact">
+
+                <div class="wrap">
+
+                    <h1>Contact Us</h1>
+
+                    <!-- <p>
+                        We'd love to hear from you!
+                    </p> -->
+
+                    <?php
+                        get_template_part( 'contact' );
+                    ?>
+
+                </div>
+
+            </div>
+
         </div>
 
     <?php endwhile; else : ?>
@@ -27,5 +45,9 @@
         </article>
 
     <?php endif; ?>
+
+    <?php
+        // get_template_part( 'footerbar' );
+    ?>
 
 <?php get_footer(); ?>
