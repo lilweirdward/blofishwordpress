@@ -27,7 +27,7 @@
         }
 
         if ( !isset( $hasError ) || $hasError == false ) {
-            $emailTo = 'zachw38@gmail.com';
+            $emailTo = 'blofishclothing@gmail.com';
             $subject = 'BLoFISH Website Message from ' . $contactName;
             $mailBody = "Name: $contactName \n\nEmail: $contactEmail \n\nComments: $comments";
             $headers = 'From: BLoFISH <'.$emailTo.'>'."\r\n".'Reply-To: '.$contactEmail;
