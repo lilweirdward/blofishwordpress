@@ -21,6 +21,10 @@ body {
     font-size: 100%;
 }
 
+h1, .h1 {
+    font-size: 5.5rem;
+}
+
 header.header {
     img.header {
         height: 5rem;
@@ -43,6 +47,38 @@ header.header {
 }
 
 .section {
+    &.beginning {
+        img {
+            width: 50%;
+        }
+        h2 {
+            font-size: 3rem;
+        }
+    }
+    &.ours {
+        .fullheight {
+            position: absolute;
+            top: 0; bottom: 0; left: 0;
+            width: 40%;
+        }
+        .wrap {
+            max-width: 60%;
+            margin-left: 40%;
+            padding: 0 10%;
+        }
+    }
+    &.yours {
+        .testimonials {
+            .woocommerce-message {
+                width: 45%;
+                float: left;
+                margin: 0 1.25% !important;
+                &:before {
+                    content: ' ';
+                }
+            }
+        }
+    }
     &.sizingchart {
         table {
             td, th {
@@ -62,6 +98,7 @@ header.header {
 
 .categories {
     &.side {
+        width: 15%;
         .category {
             h1 {
                 display: block;
@@ -70,7 +107,11 @@ header.header {
                 display: none;
             }
         }
-        width: 15%;
+    }
+    .category {
+        h1 {
+            font-size: 5.5rem;
+        }
     }
 }
 
@@ -132,5 +173,18 @@ header.header {
                 }
             }
         }
+    }
+}
+
+footer {
+    img {
+        float: left;
+        margin: 0 0 0 7.5%;
+    }
+    .pages {
+        float: right;
+        margin-right: 7.5%;
+        margin-top: 0.65625rem;
+        text-align: left;
     }
 }

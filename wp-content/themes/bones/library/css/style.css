@@ -1420,7 +1420,7 @@ h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
 
 h1, .h1 {
   font-family: "Quicksand", sans-serif;
-  font-size: 5.5rem;
+  font-size: 2.5rem;
   margin-bottom: 0.4em;
   text-align: center;
 }
@@ -1674,57 +1674,6 @@ header.header i.fa-shopping-cart {
   text-align: center;
 }
 
-old.header {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 5rem;
-  background-color: #221e1f;
-  z-index: 10;
-  -webkit-transition: right 0.3s;
-  transition: right 0.3s;
-}
-old.header:hover ~ #content, old.header:hover ~ #content > .categories.side {
-  left: -5rem;
-}
-old.header span {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  color: white;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-}
-old.header span a {
-  color: white;
-}
-old.header span a:hover {
-  color: white;
-}
-old.header span.store {
-  top: 6rem;
-}
-old.header span.about {
-  top: 10.5rem;
-}
-old.header span img {
-  display: block;
-  width: 2rem;
-  margin: 0 auto;
-  padding: 0.5rem 0;
-}
-old.header i {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 1rem 0;
-  text-align: center;
-}
-
 /*********************
 INDEX PAGE - HALFS
 *********************/
@@ -1766,6 +1715,7 @@ INDEX PAGE - HALFS
   bottom: 0;
   height: 6rem;
   width: 100%;
+  font-size: 5.5rem;
   color: white;
   margin: auto;
 }
@@ -1776,12 +1726,13 @@ ABOUT PAGE
 .section.beginning, .beginning.half {
   background-image: url("../images/groupfence.jpg");
   background-size: cover;
+  background-position: center;
   text-align: center;
   padding: 5rem 0;
 }
 .section.beginning img, .beginning.half img {
   display: block;
-  width: 50%;
+  width: 80%;
   margin: 0 auto;
 }
 .section.beginning h2, .beginning.half h2 {
@@ -1789,7 +1740,7 @@ ABOUT PAGE
   margin: 1rem auto;
   font-family: "Quicksand", sans-serif;
   font-weight: 300;
-  font-size: 3rem;
+  font-size: 1.5rem;
   color: white;
 }
 .section.beginning .button, .beginning.half .button {
@@ -1802,18 +1753,10 @@ ABOUT PAGE
   color: white;
 }
 .section.ours .fullheight, .ours.half .fullheight {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 40%;
+  width: 100%;
+  height: 50%;
   background-image: url("../images/midnightblueinsta.jpg");
   background-size: cover;
-}
-.section.ours .wrap, .ours.half .wrap {
-  max-width: 60%;
-  margin-left: 40%;
-  padding: 0 10%;
 }
 .section.yours, .yours.half {
   background-color: #221e1f;
@@ -1825,12 +1768,8 @@ ABOUT PAGE
   padding: 2rem 0;
 }
 .section.yours .testimonials .woocommerce-message, .yours.half .testimonials .woocommerce-message {
-  width: 45%;
-  float: left;
-  margin: 0 1.25% !important;
-}
-.section.yours .testimonials .woocommerce-message:before, .yours.half .testimonials .woocommerce-message:before {
-  content: ' ';
+  width: 100%;
+  margin: 1rem 0;
 }
 .section.sizingchart, .sizingchart.half {
   background-color: #221e1f;
@@ -1875,7 +1814,7 @@ PRODUCT PAGE
 }
 .categories.side {
   position: fixed;
-  width: 30%;
+  width: 20%;
 }
 .categories.side .category, .categories.side .top, .categories.side .mid, .categories.side .low {
   background-image: none;
@@ -1893,8 +1832,15 @@ PRODUCT PAGE
 }
 .categories.side .category i, .categories.side .top i, .categories.side .mid i, .categories.side .low i {
   display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 3rem;
+  width: 100%;
+  margin: auto;
   text-align: center;
-  padding: .67em 0;
   -webkit-transition: font-size 0.3s;
   transition: font-size 0.3s;
 }
@@ -1926,6 +1872,7 @@ PRODUCT PAGE
   right: 0;
   bottom: 0;
   left: 0;
+  font-size: 4.5rem;
   margin: auto;
 }
 .categories .category i, .categories .top i, .categories .mid i, .categories .low i {
@@ -1939,7 +1886,7 @@ PRODUCT PAGE
   position: absolute;
   top: 0;
   right: 0;
-  width: 70%;
+  width: 80%;
   min-height: 100%;
   margin-top: 5rem;
   padding-bottom: 8rem;
@@ -2084,6 +2031,37 @@ PRODUCT PAGE
 .woocommerce table.shop_attributes th {
   width: auto;
 }
+.woocommerce div.shop_table {
+  display: table;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 0px -1px 24px 0px;
+  text-align: left;
+  width: 100%;
+  border-collapse: separate;
+  border-radius: 5px;
+}
+.woocommerce div.shop_table .thead {
+  display: table-header-group;
+}
+.woocommerce div.shop_table .thead .column {
+  font-weight: 700;
+  padding: 9px 12px;
+}
+.woocommerce div.shop_table .tbody {
+  display: table-row-group;
+}
+.woocommerce div.shop_table .row {
+  display: table-row;
+}
+.woocommerce div.shop_table .row .column {
+  display: table-column;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 6px 12px;
+  vertical-align: middle;
+}
+.woocommerce div.shop_table .tbody:first-child .row:first-child .column {
+  border-top: 0;
+}
 
 .woocommerce #content div.product {
   width: 80%;
@@ -2225,15 +2203,12 @@ footer {
   color: white;
 }
 footer img {
-  float: left;
+  display: block;
   width: 10rem;
-  margin-left: 7.5%;
+  margin: 1rem auto;
 }
 footer .pages {
-  float: right;
-  height: 1.5rem;
-  margin-right: 7.5%;
-  margin-top: 0.65625rem;
+  text-align: center;
 }
 footer .pages a {
   color: white;
@@ -2249,6 +2224,7 @@ footer span.copyright {
   width: 100%;
   text-align: center;
   clear: both;
+  margin: 1rem 0;
 }
 footer span.copyright a {
   color: white;
@@ -2962,6 +2938,10 @@ you can add resource intensive styles.
     font-size: 100%;
   }
 
+  h1, .h1 {
+    font-size: 5.5rem;
+  }
+
   header.header img.header {
     height: 5rem;
     width: auto;
@@ -2981,6 +2961,32 @@ you can add resource intensive styles.
     bottom: 5rem;
   }
 
+  .section.beginning img, .beginning.half img {
+    width: 50%;
+  }
+  .section.beginning h2, .beginning.half h2 {
+    font-size: 3rem;
+  }
+  .section.ours .fullheight, .ours.half .fullheight {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 40%;
+  }
+  .section.ours .wrap, .ours.half .wrap {
+    max-width: 60%;
+    margin-left: 40%;
+    padding: 0 10%;
+  }
+  .section.yours .testimonials .woocommerce-message, .yours.half .testimonials .woocommerce-message {
+    width: 45%;
+    float: left;
+    margin: 0 1.25% !important;
+  }
+  .section.yours .testimonials .woocommerce-message:before, .yours.half .testimonials .woocommerce-message:before {
+    content: ' ';
+  }
   .section.sizingchart table td img, .sizingchart.half table td img, .section.sizingchart table th img, .sizingchart.half table th img {
     width: 5rem;
   }
@@ -2997,6 +3003,9 @@ you can add resource intensive styles.
   }
   .categories.side .category i, .categories.side .top i, .categories.side .mid i, .categories.side .low i {
     display: none;
+  }
+  .categories .category h1, .categories .top h1, .categories .mid h1, .categories .low h1 {
+    font-size: 5.5rem;
   }
 
   .section.side, .side.half {
@@ -3038,6 +3047,17 @@ you can add resource intensive styles.
     width: 50%;
     float: left;
     clear: none;
+  }
+
+  footer img {
+    float: left;
+    margin: 0 0 0 7.5%;
+  }
+  footer .pages {
+    float: right;
+    margin-right: 7.5%;
+    margin-top: 0.65625rem;
+    text-align: left;
   }
 }
 /*********************
