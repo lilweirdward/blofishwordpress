@@ -1,44 +1,48 @@
 <?php get_header(); ?>
 
-                <!-- <div class="homespace">
+                <a href="<?php echo home_url(); ?>/shop/">
 
-                    <div class="intro">
+                    <div id="store-half" class="half store scene_element scene_element--fadein">
 
-                        <img src="<?php echo get_template_directory_uri(); ?>/library/images/words-logo-white.png" />
-                        <h2>The world's first gender-neutral clothing company</h2>
+                        <div class="background"></div>
+
+                        <h1 class="center">Shop</h1>
 
                     </div>
 
-                    <div class="wrapper">
+                </a>
 
-                        <i id="bringtotop" class="fa fa-caret-up fa-2x"></i> -->
+                <a href="<?php echo home_url(); ?>/about/">
 
-                        <a href="<?php echo home_url(); ?>/shop/">
+                    <div id="about-half" class="half about scene_element scene_element--fadein">
 
-                            <div id="store-half" class="half store scene_element scene_element--fadein">
+                        <div class="background"></div>
 
-                                <div class="background"></div>
+                        <h1 class="center">About</h1>
 
-                                <h1 class="center">Shop</h1>
+                    </div>
 
-                            </div>
+                </a>
 
-                        </a>
+                <div id="newsflash">
 
-                        <a href="<?php echo home_url(); ?>/about/">
+                    <div class="wrap">
 
-                            <div id="about-half" class="half about scene_element scene_element--fadein">
+                        <h1>Grand Opening Party</h1>
+                        <p>
+                            1st Retail Store Opening March 19th in Louisville
+                        </p>
+                        <p>
+                            <a href="#">714 East Market St.</a>
+                        </p>
+                        <p>
+                            Party Starts @ 1
+                        </p>
 
-                                <div class="background"></div>
+                        <i class="fa fa-times fa-2x"></i>
 
-                                <h1 class="center">About</h1>
+                    </div>
 
-                            </div>
-
-                        </a>
-
-                    <!-- </div>
-
-                </div> -->
+                </div>
 
 <?php get_footer(); ?>

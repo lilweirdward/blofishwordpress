@@ -24,6 +24,17 @@ jQuery(document).ready(function($) {
         }
     });
 
+    var $newsflash = $('#newsflash');
+    if ($newsflash.length) {
+        setTimeout(function() {
+            $newsflash.addClass('active');
+        },2000);
+    }
+
+    $newsflash.find('.fa').click(function() {
+        $newsflash.removeClass('active');
+    });
+
     $('#bringtotop').click(function() {
         $(this).parent().addClass('totop');
     });

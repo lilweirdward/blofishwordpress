@@ -1720,6 +1720,35 @@ INDEX PAGE - HALFS
   margin: auto;
 }
 
+#newsflash {
+  position: fixed;
+  right: 0;
+  bottom: -11.25rem;
+  left: 0;
+  background-color: white;
+  padding: 1rem 0;
+  box-shadow: rgba(34, 30, 31, 0.75) 0 0 0.75rem;
+  -webkit-transition: bottom 0.3s ease-out;
+  transition: bottom 0.3s ease-out;
+}
+#newsflash.active {
+  bottom: 0;
+}
+#newsflash h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+#newsflash p {
+  text-align: center;
+  margin: 0.25em 0;
+}
+#newsflash .fa {
+  position: absolute;
+  top: 2rem;
+  right: 10%;
+  cursor: pointer;
+}
+
 /*********************
 ABOUT PAGE
 *********************/

@@ -337,53 +337,78 @@ INDEX PAGE - HALFS
 //             cursor: pointer;
 //             z-index: 2;
 //         }
-        .half {
-            @extend .section;
-            position: relative;
-            height: 50%;
-            overflow: hidden;
-            padding: 0;
-            color: white;
-            background-color: transparent;
-            &:hover {
-                .background {
-                    @include transform(scale(1.1,1.1));
-                }
-            }
-            .background {
-                position: absolute;
-                height: 100%;
-                width: 100%;
-                background-size: cover;
-                background-position: center;
-                z-index: -1;
-                @include transition(all $transition);
-            }
-            &.store {
-                .background {
-                    background-image: url('../images/about.png');
-                }
-            }
-            &.about {
-                .background {
-                    background-image: url('../images/groupfence.jpg');
-                }
-            }
-            h1 {
-                text-transform: uppercase;
-                &.center {
-                    position: absolute;
-                    top: 0; left: 0; bottom: 0;
-                    height: 6rem;
-                    width: 100%;
-                    font-size: 5.5rem;
-                    color: white;
-                    margin: auto;
-                }
-            }
+.half {
+    @extend .section;
+    position: relative;
+    height: 50%;
+    overflow: hidden;
+    padding: 0;
+    color: white;
+    background-color: transparent;
+    &:hover {
+        .background {
+            @include transform(scale(1.1,1.1));
         }
+    }
+    .background {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+        @include transition(all $transition);
+    }
+    &.store {
+        .background {
+            background-image: url('../images/about.png');
+        }
+    }
+    &.about {
+        .background {
+            background-image: url('../images/groupfence.jpg');
+        }
+    }
+    h1 {
+        text-transform: uppercase;
+        &.center {
+            position: absolute;
+            top: 0; left: 0; bottom: 0;
+            height: 6rem;
+            width: 100%;
+            font-size: 5.5rem;
+            color: white;
+            margin: auto;
+        }
+    }
+}
 //     }
 // }
+
+#newsflash {
+    position: fixed;
+    right: 0; bottom: -11.25rem; left: 0;
+    background-color: white;
+    padding: 1rem 0;
+    box-shadow: rgba($black, 0.75) 0 0 0.75rem;
+    @include transition(bottom $transition ease-out);
+    &.active {
+        bottom: 0;
+    }
+    h1 {
+        margin: 0;
+        font-size: 2.5rem;
+    }
+    p {
+        text-align: center;
+        margin: 0.25em 0;
+    }
+    .fa {
+        position: absolute;
+        top: 2rem; right: 10%;
+        cursor: pointer;
+    }
+}
 
 /*********************
 ABOUT PAGE
