@@ -24,25 +24,4 @@
 
                 </a>
 
-                <div id="newsflash">
-
-                    <div class="wrap">
-
-                        <h1>Grand Opening Party</h1>
-                        <p>
-                            1st Retail Store Opening March 19th in Louisville
-                        </p>
-                        <p>
-                            <a href="#">714 East Market St.</a>
-                        </p>
-                        <p>
-                            Party Starts @ 1
-                        </p>
-
-                        <i class="fa fa-times fa-2x"></i>
-
-                    </div>
-
-                </div>
-
 <?php get_footer(); ?>

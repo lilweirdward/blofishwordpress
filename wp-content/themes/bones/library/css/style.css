@@ -1963,9 +1963,11 @@ PRODUCT PAGE
   top: 2rem;
   opacity: 1;
 }
-.section.side ul.products li.product:hover .layer h4, .side.half ul.products li.product:hover .layer h4 {
+.section.side ul.products li.product:hover .layer span.price, .side.half ul.products li.product:hover .layer span.price {
   top: 4rem;
   opacity: 1;
+  font-weight: bold;
+  font-size: 1.1em;
 }
 .section.side ul.products li.product:hover .layer span.button, .side.half ul.products li.product:hover .layer span.button {
   bottom: 2rem;
@@ -1987,7 +1989,7 @@ PRODUCT PAGE
   -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s;
 }
-.section.side ul.products li.product .layer h3, .side.half ul.products li.product .layer h3, .section.side ul.products li.product .layer h4, .side.half ul.products li.product .layer h4 {
+.section.side ul.products li.product .layer h3, .side.half ul.products li.product .layer h3, .section.side ul.products li.product .layer span.price, .side.half ul.products li.product .layer span.price {
   position: absolute;
   top: 0;
   left: 0;
