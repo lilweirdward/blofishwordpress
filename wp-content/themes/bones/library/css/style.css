@@ -2464,6 +2464,9 @@ POSTS & CONTENT STYLES
 .entry-content p {
   margin: 0 0 1.5em;
 }
+.entry-content ol {
+  list-style-type: decimal;
+}
 .entry-content table {
   width: 100%;
   border: 1px solid #eeeeee;
