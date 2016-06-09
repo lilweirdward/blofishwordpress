@@ -369,7 +369,6 @@ header.header i.fa-shopping-cart {
   font-size: 1.5rem;
 }
 .woocommerce #content div.product div.product_details .wc-tab#tab-description, .woocommerce #content div.product div.product_details .wc-tab#tab-additional_information, .woocommerce #content div.product div.product_details .entry-content#tab-description, .woocommerce #content div.product div.product_details .entry-content#tab-additional_information {
-  width: 50%;
   float: left;
   clear: none;
 }
