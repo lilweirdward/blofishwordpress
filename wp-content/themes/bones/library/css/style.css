@@ -1722,27 +1722,78 @@ INDEX PAGE - HALFS
 
 #newsflash {
   position: fixed;
-  right: 0;
-  bottom: -11.25rem;
+  top: 0;
   left: 0;
-  background-color: white;
-  padding: 1rem 0;
-  box-shadow: rgba(34, 30, 31, 0.75) 0 0 0.75rem;
-  -webkit-transition: bottom 0.3s ease-out;
-  transition: bottom 0.3s ease-out;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(34, 30, 31, 0.75);
+  opacity: 0;
+  z-index: -1;
+  -webkit-transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out;
 }
 #newsflash.active {
-  bottom: 0;
+  opacity: 1;
+  z-index: 1000;
 }
-#newsflash h1 {
+#newsflash #thebox {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 80%;
+  height: 75%;
+  background-color: white;
+  box-shadow: rgba(34, 30, 31, 0.75) 0 0 50rem;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+@keyframes slideshow {
+  #newsflash #thebox 0%  {
+    left: 0;
+  }
+  #newsflash #thebox 100%  {
+    left: calc(40vw * 8.98281341);
+  }
+}
+#newsflash #thebox .images {
+  background-image: url("../images/newsflash-banner.jpg");
+  background-position: top center;
+  background-size: auto 100%;
+  background-repeat: repeat-x;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40%;
+  width: 100%;
+}
+#newsflash #thebox .text {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  width: 100%;
+  padding: 1rem 10%;
+}
+#newsflash #thebox .text h1 {
   margin: 0;
   font-size: 2.5rem;
 }
-#newsflash p {
+#newsflash #thebox .text p {
   text-align: center;
   margin: 0.25em 0;
 }
-#newsflash .fa {
+#newsflash #thebox .text p img {
+  height: 0.75rem;
+}
+#newsflash #thebox .text .button {
+  margin: 1rem auto;
+  background-color: #2BDE73;
+  border-color: transparent;
+  color: black;
+}
+#newsflash #thebox .fa {
   position: absolute;
   top: 2rem;
   right: 10%;
