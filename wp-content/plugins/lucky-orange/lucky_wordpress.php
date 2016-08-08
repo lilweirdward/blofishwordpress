@@ -4,7 +4,7 @@
 Plugin Name: Lucky Orange | Chat, heatmaps, polls, visitor recordings, live analytics. 
 Plugin URI: http://www.luckyorange.com/
 Description: See heatmaps, live support chat, visitor polls, and visitor recordings. Look under Dashboard for "Lucky Orange". 
-Version: 1.94
+Version: 1.96
 Author: LuckyOrange.com
 Author URI: http://www.luckyorange.com
 */
@@ -50,7 +50,7 @@ function lucky_orange_menus()
 	
 	// add to dashboard
 	if (current_user_can('administrator')) {
-	 add_menu_page( 'Lucky Orange', 'Lucky Orange', 'administrator', 'lucky_orange_slug', 'lucky_orange_print_main_page', 'https://ssl.luckyorange.com/graphics/16x16_orange.png',3);
+	 add_menu_page( 'Lucky Orange', 'Lucky Orange', 'administrator', 'lucky_orange_slug', 'lucky_orange_print_main_page', 'https://www.luckyorange.com/graphics/16x16_orange.png',3);
 	}
 }
 add_action('admin_menu', 'lucky_orange_menus');
@@ -106,8 +106,7 @@ function lucky_orange_load_plugin() {
 			delete_option('Lucky_Activate_Plugin');
 			/* do stuff once right after activation */
 			lucky_orange_track_event('wordpress_activate');
-			
-			
+					
 		}
 		
 	}
@@ -136,15 +135,15 @@ function lucky_orange_track_event($type)
 	$type = urlencode($type);
 	
 	
-	 echo '<script>(function() {
-		var wa = document.createElement(\'script\'); wa.type = \'text/javascript\'; wa.async = false;
-		wa.src = (\'https:\' == document.location.protocol ? \'https://ssl\' : \'http://w1\') + \'.luckyorange.com/json.event.php?t=' . $type . '&o1=\' + encodeURIComponent(\'' . site_url() . '\');
-		var s = document.getElementsByTagName(\'script\')[0]; s.parentNode.insertBefore(wa, s);
+	 echo "<script>(function() {
+		var wa = document.createElement('script'); wa.type = 'text/javascript'; wa.async = false;
+		wa.src = 'https://www.luckyorange.com/json.event.php?t=" . $type . "&o1=' + encodeURIComponent('" . site_url() . "');
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wa, s);
 	  })();
 	  </script>
-	  ';
+	  ";
 
-    
+   
 }
 
 function lucky_orange_print_track_code()
@@ -168,7 +167,7 @@ function lucky_orange_print_track_code()
 	
 (function() {
     var wa = document.createElement('script'); wa.type = 'text/javascript'; wa.async = true;
-    wa.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://w1') + '.luckyorange.com/w.js';
+    wa.src = 'https://d10lpsik1i8c69.cloudfront.net/w.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wa, s);
   })();
 </script>";	

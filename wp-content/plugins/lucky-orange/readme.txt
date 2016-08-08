@@ -3,7 +3,7 @@ Contributors: crickeys
 Donate link: http://luckyorange.com/
 Tags: chat, live chat, clicktale, form analytics, form statistics, chat tool, olark, heatmaps, visitor recordings, analytics, real time analytics, polls, insights, visitor map, live support chat, heat maps
 Requires at least: 2.0.2
-Tested up to: 4.4
+Tested up to: 4.5.2
 Stable tag: trunk
 
 The Original All-in-One Conversion Optimization Suite. Used on over 35,000 sites. See everything your visitors did before they left. Get started for FREE!
@@ -212,6 +212,12 @@ The code will simply stop tracking new visitors. As soon as 1 visitor leaves, it
 7. Watch Movies of Visitors Trying to use Your Website. Lucky Orange will automatically capture every visitor that visits your website and create a "recording" of what they did. You can watch every click, scroll, move and more to find out how visitors are truly using your website.
 
 == Changelog ==
+= 1.96 =
+* Checked for latest version of wordpress and new icons.
+
+= 1.95 =
+* Uses cloudfront URL for increased security and scalability
+
 = 1.94 =
 * Compatibility check with latest Wordpress 4.4
 
