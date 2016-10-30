@@ -31,47 +31,6 @@ get_header( 'shop' ); ?>
 
     <div class="section side">
 
-        <!-- <div class="wrap">
-
-            <img class="header" src="<?php echo get_template_directory_uri(); ?>/library/images/words-logo.png" />
-
-            <div class="mini-categories">
-
-                <?php
-
-                    $product_categories = get_categories( apply_filters( 'woocommerce_product_subcategories_args', array(
-                        'menu_order'   => 'ASC',
-                        'hide_empty'   => 0,
-                        'hierarchical' => 1,
-                        'taxonomy'     => 'product_cat',
-                        'pad_counts'   => 1
-                    ) ) );
-
-                    foreach ( $product_categories as $category ) { ?>
-
-                        <a href="<?php echo get_term_link( $category->slug, 'product_cat' ); ?>">
-                            <span <?php if ( is_product_category( $category->slug ) ) { echo 'class="bold"'; } ?>><?php echo $category->name; ?></span>
-                        </a> |
-
-                <?php }
-
-                    $cart = WC()->session->get( 'cart', array() );
-                    $actualCart = WC()->cart; ?>
-
-                <span>
-                    <a href="<?php $page = get_page_by_title('Cart'); echo get_page_link($page->ID); ?>">
-                        <i class="fa fa-shopping-cart"></i> <?php echo $actualCart->get_cart_subtotal(); ?>
-                    </a>
-                </span>
-
-            </div>
-
-            <p>
-                For us at BLoFISH Clothing, "All for All" isn't just our slogan, it is our lifestyle, one we live and breathe every moment. Share your story, and share the message: #A4A
-            </p>
-
-        </div> -->
-
 		<?php //do_action( 'woocommerce_archive_description' ); ?>
 
 		<?php if ( have_posts() ) : ?>
